@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="pdv-container">
+
+    <div class="pdv-left">
+        <div class="logo-watermark">LOGO</div>
+
+        <input type="text" placeholder="Código ou Produto" class="busca">
+
+        <div class="lista-produtos">
+            <div class="item linha1">Produto Exemplo 1</div>
+            <div class="item linha2">Produto Exemplo 2</div>
+            <div class="item linha1">Produto Exemplo 3</div>
+        </div>
+    </div>
+
+    <div class="pdv-right">
+        <h2>Total</h2>
+        <div class="total">R$ 0,00</div>
+
+        <button class="btn">Finalizar Venda</button>
+        <button class="btn cancel">Cancelar</button>
+    </div>
+
+</div>
+
+{% endblock %}

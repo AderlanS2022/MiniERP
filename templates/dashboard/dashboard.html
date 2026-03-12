@@ -1,0 +1,84 @@
+
+{% extends 'base.html' %}
+
+{% block titulo %}
+Dashboard
+{% endblock %}
+
+{% block conteudo %}
+
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="card p-3">
+<h6>Vendas do Dia</h6>
+<h2>207</h2>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3">
+<h6>Faturamento Hoje</h6>
+<h2 class="text-success">R$ 7.350,00</h2>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3">
+<h6>Total Receber</h6>
+<h2 class="text-warning">R$ 12.500,00</h2>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3">
+<h6>Total Pagar</h6>
+<h2 class="text-danger">R$ 8.780,00</h2>
+</div>
+</div>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<div class="card-body">
+
+<h5>Últimas vendas</h5>
+
+<table class="table">
+
+<thead>
+<tr>
+<th>Data</th>
+<th>Venda</th>
+<th>Cliente</th>
+<th>Total</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>15/04</td>
+<td>6725</td>
+<td>João</td>
+<td>150,00</td>
+</tr>
+
+<tr>
+<td>15/04</td>
+<td>6724</td>
+<td>Maria</td>
+<td>80,00</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+</div>
+
+{% endblock %}

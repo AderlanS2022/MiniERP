@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h4>Nova Movimentação</h4>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button class="btn btn-success">
+            Salvar
+        </button>
+
+        <a href="{% url 'lista_movimentacoes' %}" class="btn btn-secondary">
+            Voltar
+        </a>
+
+    </form>
+
+</div>
+
+{% endblock %}

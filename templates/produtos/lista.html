@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="d-flex justify-content-between mb-3">
+    <h3>Produtos</h3>
+    <a href="#" class="btn btn-primary">+ Novo Produto</a>
+</div>
+
+<div class="card-custom">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Exemplo</td>
+                <td>Categoria</td>
+                <td>10,00</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

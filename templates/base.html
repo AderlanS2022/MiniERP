@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}MiniERP{% endblock %}</title>
+
+  <!-- Bootstrap 5 OFFLINE -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <!-- Bootstrap Icons OFFLINE -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}">
+
+  <!-- Seu CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  {% with p=request.path %}
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar__brand">
+        <div class="brand">
+          <!-- Se tiver logo: static/img/LogoMiniPDV.png -->
+          <img class="brand__logo" src="{% static 'img/LogoMiniPDV.png' %}" alt="MiniERP+PDV"
+               onerror="this.style.display='none'">
+          <div class="brand__text">
+            <div class="brand__title">MiniERP+PDV</div>
+            <div class="brand__sub">Supermercado • Local</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar__nav">
+        <a class="navitem {% if p == '/' %}active{% endif %}" href="/">
+          <i class="bi bi-speedometer2"></i><span>Dashboard</span>
+        </a>
+
+        <a class="navitem {% if p|slice:':10' == '/produtos/' %}active{% endif %}" href="/produtos/">
+          <i class="bi bi-box-seam"></i><span>Produtos</span>
+        </a>
+
+        <a class="navitem {% if p|slice:':9' == '/estoque/' %}active{% endif %}" href="/estoque/">
+          <i class="bi bi-stack"></i><span>Estoque</span>
+        </a>
+
+        <a class="navitem {% if p|slice:':5' == '/pdv/' %}active{% endif %}" href="/pdv/">
+          <i class="bi bi-cart3"></i><span>PDV</span>
+        </a>
+
+        <a class="navitem {% if p|slice:':12' == '/financeiro/' %}active{% endif %}" href="/financeiro/">
+          <i class="bi bi-cash-coin"></i><span>Financeiro</span>
+        </a>
+
+        <a class="navitem {% if p|slice:':9' == '/compras/' %}active{% endif %}" href="/compras/">
+          <i class="bi bi-bag-check"></i><span>Compras</span>
+        </a>
+
+        <a class="navitem {% if p|slice:':12' == '/relatorios/' %}active{% endif %}" href="/relatorios/">
+          <i class="bi bi-file-earmark-text"></i><span>Relatórios</span>
+        </a>
+
+        <a class="navitem {% if p|slice:':10' == '/usuarios/' %}active{% endif %}" href="/usuarios/">
+          <i class="bi bi-people"></i><span>Usuários</span>
+        </a>
+
+        <a class="navitem {% if p|slice:':15' == '/configuracoes/' %}active{% endif %}" href="/configuracoes/">
+          <i class="bi bi-gear"></i><span>Configurações</span>
+        </a>
+      </nav>
+
+      <div class="sidebar__footer">
+        <div class="small text-white-50">Versão local • MiniERP</div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar__left">
+          <button id="btnToggleSidebar" class="iconbtn" type="button" aria-label="Menu">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <div class="topbar__title">
+            {% block header_title %}MiniERP{% endblock %}
+          </div>
+        </div>
+
+        <div class="topbar__right">
+          <div class="topbar__user">
+            <i class="bi bi-bell me-2"></i>
+            <span class="me-2">Olá, <strong>Admin</strong></span>
+            <span class="avatar">A</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <section class="content">
+        <div class="content__wrap">
+          {% block content %}{% endblock %}
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        © 2025 <strong>MiniERP+PDV</strong> — Todos os direitos reservados |
+        Suporte: <strong>(74) 98874-0900</strong>
+      </footer>
+
+    </main>
+  </div>
+  {% endwith %}
+
+  <!-- Bootstrap OFFLINE -->
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <!-- Seu JS -->
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
